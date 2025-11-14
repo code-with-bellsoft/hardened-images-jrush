@@ -6,7 +6,7 @@
 :root{
     --bg-glass: rgba(8, 16, 30, 0.76);         /* dark blue glass */
     --ink: #e6ecf1;                             /* soft off-white */
-    --neon-pink: #ff4bd1;                       /* primary accent */
+    --neon-pink: #6F2DBD;                       /* primary accent */
     --neon-cyan: #00e6ff;                       /* secondary accent */
     --neon-blue: #7aa7ff;                       /* tertiary accent for subtle bits */
     --shadow: rgba(0, 0, 0, 0.35);
@@ -81,12 +81,9 @@ h1, h2, h3, h4, p, ul, ol{
 /* --- Headings --- */
 h1{
     font-weight: 700;
-    color: var(--neon-cyan);
-    text-shadow: 0 0 6px rgba(0,230,255,0.75), 0 0 18px rgba(0,230,255,0.35);
-    border-color: var(--neon-cyan);
-    /*color: var(--neon-pink);*/
-    /*text-shadow: 0 0 6px rgba(255,75,209,0.75), 0 0 18px rgba(255,75,209,0.35);*/
-    /*border-color: var(--neon-pink);*/
+    color: var(--neon-pink);
+    text-shadow: 0 0 6px rgba(111, 45, 189, 0.75), 0 0 18px rgba(111, 45, 189, 0.35);
+    border-color: var(--neon-pink);
 }
 h2{
     color: var(--neon-cyan);
@@ -217,3 +214,10 @@ tr:hover td{
     border-radius: 10px;
     box-shadow: 0 0 18px rgba(122,167,255,0.28), 0 10px 30px var(--shadow);
 }
+
+.shiki, .shiki pre, .shiki code {
+    color: #e9f6ff !important;
+}
+
+.shiki span { color: #e9f6ff !important; }
+.shiki .line { line-height: 1.5; }
