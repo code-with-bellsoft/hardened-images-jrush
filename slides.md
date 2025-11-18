@@ -297,12 +297,7 @@ layout: cover
 ## The data speaks louder than words:<br/> Let's have a look, shall we?
 
 <div class="link-wrap">
-  <a
-    href="https://bell-sw.com/bellsoft-hardened-images/"
-    target="_blank" rel="noopener noreferrer"
-  >
-    Live container image CVEs stats ↗
-  </a>
+https://bell-sw.com/bellsoft-hardened-images/
 </div>
 
 <style>
@@ -314,6 +309,33 @@ layout: cover
 
 </style>
 
+---
+layout: center
+---
+
+<img src="/temurin.png" width="700px" class="center"/>
+
+<style>
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+---
+layout: center
+---
+
+<img src="/python.png" width="700px" class="center"/>
+
+<style>
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
 ---
 layout: cover
 ---
