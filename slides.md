@@ -61,6 +61,24 @@ image: /old-city.png
 layout: image
 image: /old-city.png
 ---
+
+## The container image should be a safe city for your app, yet...
+
+- Delayed deployments
+- Revenue loss
+- Operational burden
+- Incompliance with regulations
+
+<v-click>
+
+Why?
+
+</v-click>
+
+---
+layout: image
+image: /old-city.png
+---
 ## Typical container image is not a safe place:<br/> smuggler tunnels
 
 - Package manager
@@ -72,10 +90,9 @@ image: /old-city.png
 ---
 ## Typical container image is not a safe place:<br/> thick fog
 
-- No SBOM, no digital signature:<br/><br/>
-    - Where does the image come from?
-    - Who is responsible for updates?
-    - Is there a defined update cycle?
+- Where does the image come from?
+- Who is responsible for updates?
+- Is there a defined update cycle?
 
 ---
 layout: image
@@ -83,60 +100,38 @@ image: /old-city.png
 ---
 ## Typical container image is not a safe place:<br/> phantoms in the fog
 
-- CVEs: dozens? hundreds?<br/><br/>
-    - Scanners are paranoid, but not always efficient
-    - Specific weapon for each phantom -> Patches
-    - What if there's no patch upstream?
+- Vulnerabilities (CVEs): security weaknesses that can be exploited
+- Hundreds of vulnerabilities
+- Patches: how you can eliminate a specific phantom
 
 ---
 
 ## Not a dystopian phantasy, but reality of modern cloud deployments
 
-- 40,003 CVEs recorded in 2024 (39% more than in 2023)
+- 40,003 CVEs recorded in 2024 - 39% more than in 2023
 - 604 vulnerabilities in an average container image
-- 12.4% of components are manifestless
 - 44% of Java services contain known-exploited vulnerabilities
-- 91% of projects contain outdated OSS components
-- Most vulnerabilities in Debian packages
+- 91% of projects contain OSS components not updated after CVEs were found and patched
 
 ---
 layout: cover
 ---
 
-## One would probably get away with that, but...
-
----
-
-## No way for normal operation in a broken reality
-
-- Delayed deployments
-- Revenue loss
-- Operational burden
-- Broken SLAs
-- Incompliance with regulations
-
----
-layout: cover
----
-
+# What do you do if your app lives in such a city?
 ## Three solutions: attack, stay, leave
 
 ---
 
 ## Attack outsiders first
 
-- No idea who to attack
-- No idea how to attack
+- Knowing martial arts doesn't mean you should go looking for thugs
 
 ---
 
 ## Stay and defend the old order
 
-- Most teams do that now
-- Look for patches reactively
 - React to security incidents
-- Block deploys if smth is wrong
-- Scan -> patch -> scan -> patch -> scan ...
+- Why should you solve the issues in the code you didn't write?
 
 
 ---
@@ -173,23 +168,23 @@ layout: two-cols-header
 
 <div class="hi-grid">
   <div class="hb">Low to zero CVEs</div>
-  <div class="arrow">→</div>
+  <div class="arrow">➡️</div>
   <div class="hb">Safer base from the start</div>
 
-  <div class="hb">No package manager or unrequired libs</div>
-  <div class="arrow">→</div>
+  <div class="hb">No package manager, minimalistic base</div>
+  <div class="arrow">➡️</div>
   <div class="hb">Minimized attack surface</div>
 
   <div class="hb">Immutable component set</div>
-  <div class="arrow">→</div>
+  <div class="arrow">➡️</div>
   <div class="hb">No tampering with container at runtime</div>
 
   <div class="hb">SBOM, digital signature</div>
-  <div class="arrow">→</div>
-  <div class="hb">Clear provenance</div>
+  <div class="arrow">➡️</div>
+  <div class="hb">You know what's in the image and who made it</div>
 
   <div class="hb">Continuous patching</div>
-  <div class="arrow">→</div>
+  <div class="arrow">➡️</div>
   <div class="hb">The image stays safe</div>
 </div>
 
@@ -218,13 +213,38 @@ layout: two-cols-header
 
 
 ---
+layout: image-right
+image: /alpaquita.jpg
+---
 
-## BellSoft's Hardened Images: Beyond Pure CVE Reduction
+## BellSoft's Hardened Images: Based on Alpaquita Linux
 
-- Based on Alpaquita Linux musl/glibc
-- Images for OpenJDK, Go, Python, GraalVM, C/C++
+- Minimalistic
+- LTS releases
+- Two libc flavors: optimized musl and glibc
+
+---
+layout: image-right
+image: "/logos.png"
+---
+
+## BellSoft's Hardened Images: A variety of free images
+
+The images are available on:
+- Docker Hub
+- GitHub Container Registry
+- Microsoft Container Registry
+- Google Container Registry
+- Amazon Elastic Container Registry
+
+
+---
+
+## BellSoft's Hardened Images: 3-in-1
+
 - Runtime, OS, and container security from one team
 - SLA-backed proactive patching from in-house Linux and Java experts
+
 
 ---
 
@@ -294,12 +314,27 @@ layout: cover
 
 </style>
 
-
 ---
 layout: cover
 ---
 
 ## Here comes the most exciting part:<br/> How do you migrate to a hardened image?
+
+---
+layout: center
+---
+
+## BellSoft's Hardened Images are free to use!
+
+<img src="/dh.png" class="center"/>
+
+<style>
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
 
 ---
 
@@ -374,10 +409,11 @@ image: /new-city.jpg
 
 ## Hardened image is a safe place
 
-- No smuggler tunnels
-- No fog, the air is clear
-- No lurking phantoms
-- If a phantom appears, it is seen instantly and eliminated promptly
+- No package manager
+- Minimalistic base
+- You know what components are used in the image
+- Low-to-zero CVEs
+- Known vulnerabilities are patched by the vendor
 - No patch upstream? BellSoft will make one for you!
 
 ---
@@ -388,14 +424,14 @@ image: /new-city.jpg
 ## What's next?
 
 - Verify the signature with cosign (can do that in CI/CD)
-- Set up updates monitoring: Dependabot, Renovate, etc.
+- Set up updates monitoring
 - The base is solid, care about the new city built on it:<br/>
   - follow container security practices
   - focus on the application security
 
 ---
 
-## TL;DR Hardened Images are a Perfect Match for DevSecOps
+## TL;DR Hardened Images Integrate Well Into DevSecOps
 
 - Clear CVE management process
 - Provenance data for compliance and audits
@@ -409,3 +445,13 @@ image: /new-city.jpg
 ## Thank you!
 
 🦋 @cat-edelveis.bsky.social | bell-sw.com
+
+---
+
+## References
+
+1. https://www.netrise.io/resources-whitepaper-brief/supply-chain-visibility-risk-study-edition-2
+2. https://www.datadoghq.com/state-of-devsecops/
+3. https://www.redhat.com/en/resources/kubernetes-adoption-security-market-trends-overview
+4. https://www.blackduck.com/resources/analyst-reports/open-source-security-risk-analysis.html
+5. https://cyberpress.org/over-40000-cves-published-in-2024/
